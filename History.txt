@@ -1,0 +1,114 @@
+Transcription:
+Total: 443124
+	2016 05 25: 14136
+	2016 05 26: 233
+	2016 05 31: 2610
+	2016 06 17: 686
+	2016 06 18: 10615
+	2016 07 22: 34333
+	2016 07 23: 64498
+	2016 07 24: 16777
+	2016 07 26: 41335
+	2016 07 27: 27477
+	2016 07 31: 34497
+	2016 08 01: 37617
+	2016 08 03: 30148
+	2016 08 04: 64614
+	2016 08 05: 529
+	2016 08 16: 50556
+	2016 08 17: 12463
+Renaming and Touching
+	2019 11 29 10:18:00
+
+2016 05 25
+          127 libs/new/_delete.c
+          134 libs/complex/error.c
+         1524 sscan/CCcrt0.s
+          173 libs/complex/polar.c
+         1815 sscan/CCmcrt0.s
+         2375 sscan/ldfcn.h
+          285 sscan/makefile
+         3048 makefile
+          321 libs/new/_new.c
+          401 libs/makefile
+          401 libs/new/makefile
+          466 libs/Cover
+          466 sscan/Cover
+          776 libs/task/makefile
+          874 README
+          950 libs/complex/makefile
+2016 05 26
+          174 cfront/size_align
+           59 cfront/misc.c
+2016 05 31
+         2610 CC
+2016 06 17
+          686 cfront/Cover
+2016 06 18
+         1123 libs/task/vax_swap.s
+         1388 libs/task/sim.c
+         1514 libs/complex/sqrt.c
+          212 libs/new/_handler.c
+        25458 CoverA.gif
+       363907 Cover.gif
+          395 libs/task/timer.c
+         4383 libs/task/sched.c
+          461 libs/complex/io.c
+          522 libs/stream/circbuf.c
+          617 libs/complex/abs.c
+2016 07 22
+         1694 cfront/size.h
+         1707 cfront/makefile
+         3128 cfront/del.c
+         3267 cfront/repr.c
+         3608 cfront/size.c
+         3612 cfront/token.h
+         4239 cfront/alloc.c
+         5853 cfront/error.c
+         6332 cfront/typ2.c
+          893 cfront/typedef.h
+2016 07 23
+         1010 libs/complex/sin.c
+        10905 cfront/expand.c
+         1227 libs/complex/log.c
+         1272 libs/complex/oper.c
+          133 libs/complex/arg.c
+        13546 cfront/typ.c
+         1465 libs/stream/filebuf.c
+         1469 libs/task/obj.c
+         1527 libs/complex/pow.c
+         1977 libs/task/qtail.c
+         5265 libs/stream/in.c
+          537 libs/new/_vec.c
+         5745 cfront/norm2.c
+         7305 cfront/table.c
+          798 libs/stream/streambuf.c
+         8442 libs/task/task.c
+          929 libs/complex/exp.c
+          946 libs/complex/cos.c
+2016 07 24
+        16777 cfront/cfront.h
+2016 07 26
+        19309 cfront/lex.c
+        22026 cfront/norm.c
+2016 07 27
+        27477 cfront/gram.y
+2016 07 31
+        34497 cfront/print.c
+2016 08 01
+        37617 cfront/simpl.c
+2016 08 03
+        30148 cfront/expr.c
+2016 08 04
+        24691 cfront/expr2.c
+        39923 cfront/dcl.c
+2016 08 05
+          529 libs/stream/makefile
+2016 08 16
+         2877 sscan/sscan.c
+         3809 libs/task/qhead.c
+        38527 cfront/dcl2.c
+         5343 libs/stream/out.c
+2016 08 17
+         2559 Cover
+         9904 cfront/main.c
