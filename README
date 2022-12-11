@@ -1,0 +1,24 @@
+// 1985 Feb 08 14:11
+# %Z% %M% %I% %H% %T%
+To build and install your C++ compiler:
+1)	Dump the tape (using "cpio -icd") to a convenient directory (like "/home/directory/C++").
+	No doubt this has already been done.
+2)	Edit the file localCC.
+	Change the ROOT variable to /home/directory/C++.
+3)	cd to the directory and issue
+		"make ROOT=/home/directory/C++ from scratch"
+	This will make everything from scratch and install the executables, libraries and include files locally (i.e., under /home/directory/C++).
+	Issue a
+		"make clean".
+4)	Issue (from /home/directory/C++)
+		"make CC=/home/directory/C++/usr/lbin/CC install"
+	This will install the executables, libraries and include files in the standard places:
+		/usr/lbin/cfront
+		/usr/lbin/CC
+		/lib/libC.a
+		/usr/include/CC/...
+		/usr/lbin/sscan
+		/lib/CCcrt0.o
+		/lib/CCmcrt0.o
+5)	To save space, issue a
+		"make clean".

@@ -1,0 +1,174 @@
+## 1985 Feb 08 17:59
+# @(#) CC 1.2 2/8/85 17:59:07
+E=O
+: ${CFRONT:=$ROOT/usr/lbin/cfront}
+: ${SSCAN:=$ROOT/usr/sscan}
+: ${ARLIB:=$ROOT/lib/libC.a}
+: ${I:=$ROOT/usr/include/CC}
+: ${CCOMP:=cc}
+: ${LDCC:=/usr/local/bin/cc}
+: ${CRTOPT:='-Y S,$ROOT/lib/CC'}
+if vax ; then
+	SUF=..c
+	OSUF=..o
+else
+	SUF=.i
+	OSUF=.o
+fi
+
+for A do
+	case $A in
+	+V)	I="/usr/include"
+		O="$O $A"
+		;;
+	+i)	RMI="echo preprocessor output in"
+		;;
+	+I)	STATICS=yes ;
+		O="$O $A"
+		;;
+	+*)	O="$O $A"
+		;;
+	-E)	PON=1
+		;;
+	-F)	FON=1
+		;;
+	-Fc)	FON=1
+		O="$O +L"
+		;;
+	-c)	DASHCOPT="-c"
+		;;
+	-r)	LDOPT="$LDOPT $A"
+		DASHROPT="-r"
+		;;
+	-[gp])	COMPOPT="$COMPOPT $A"
+		LDOPT="$LDOPT $A"
+		;;
+	-C)	Y="$Y $A"
+		O="$O +C"
+		;;
+	-I*)	Y="$Y $A"
+		;;
+	-D*)	Y="$Y $A"
+		;;
+	-U*)	Y="$Y $A"
+		;;
+	-.c)	echo "bad suffix option: -.c"
+		;;
+	-.*)	SUF=`expr "$A" : '-\(.*\)'`
+		;;
+	[!-]*.[oa])	LDOPT="$LDOPT $A"
+		G=1
+		;;
+	*.c)	if	test -f $A
+		then
+			B=`basename $A .c`
+			if	test $PON
+			then
+				if test $SUF
+				then
+					echo "cpp $O  $A > $B$SUF:"
+					/lib/cpp $Y -I$I  $A >$B$SUF
+					E=$?
+					case $E in
+					0)	;;
+					*)	break
+						;;
+					esac
+				else
+					/lib/cpp $Y -I$I  $A
+					E=$?
+					case $E in
+					0)	;;
+					*)	break
+						;;
+					esac
+				fi
+			elif	test $FON
+			then
+				if test $SUF
+				then
+					echo "cfront $O < $A > $B$SUF:"
+					/lib/cpp -C $Y -I$I  $A | $CFRONT +f$A $O
+					E=$?
+					if [ "$RMI" != "" ] ; then
+						sed '/^#/d' > /tmp/CC$$ $B$SUF
+						mv /tmp/CC$$ $B$SUF
+						fi
+
+					case $E in
+					0)	;;
+					1)	echo "1 error"
+						break
+						;;
+					*)	echo "$E errors"
+						break
+						;;
+					esac
+				else
+					/lib/cpp -C $Y -I$I  $A | $CFRONT +f$A $O
+					E=$?
+					case $E in
+					0)	;;
+					*)	break
+						;;
+					esac
+				fi
+			else
+				echo "CC $O $A:"
+				/lib/cpp -C $Y -I$I  $A | $CFRONT +f$A $O  > $B$SUF
+				E=$?
+				if [ "$RMI" != "" ] ; then
+					sed '/^#/d' > /tmp/CC$$  $B$SUF
+					mv /tmp/CC$$ $B$SUF
+					fi
+
+				R=1
+				C="$C $B$SUF"
+				case $E in
+				0)	COMPOPT="$COMPOPT $B$SUF"
+					LDOPT="$LDOPT $B$OSUF"
+					G=1
+					;;
+				1)	echo "1 error"
+					break
+					;;
+				*)	echo "$E errors"
+					break
+					;;
+				esac
+			fi
+		else
+			echo "$A not found"
+		fi
+		;;
+	*)	COMPOPT="$COMPOPT $A"
+		LDOPT="$LDOPT $A"
+		G=1
+		;;
+	esac
+done
+
+if	test $G
+then
+	$CCOMP -c $COMPOPT
+	if [ "$DASHCOPT" = "-c" ]
+	then
+		: no ld
+	else
+		if [ "$STATICS" = "yes"  -a "$DASHROPT" != "-r" ]
+		then
+			$SSCAN $LDOPT >/tmp/_ST$$.c
+			$LDCC $CRTOPT /tmp/_ST$$.c $LDOPT $ARLIB
+			rm -f /tmp/_ST$$.c _ST$$.o _ST$$.s 2>/dev/null
+		else
+			$LDCC $LDOPT $ARLIB
+		fi
+	fi
+fi
+
+if	test $R
+then
+	${RMI:-rm} $C
+fi
+
+exit $E

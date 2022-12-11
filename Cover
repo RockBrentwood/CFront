@@ -1,0 +1,58 @@
+The 1985 C++ installation was organized into the following:
+*	C++ (cfront)
+*	sscan
+*	libc
+	-	complex
+	-	new
+	-	stream
+	-	task
+
+The original cover letter is included below. The PDFs the printouts were derived from are not included with this distribution but are (at the time of writing) present in Paul McJones' archive.
+
+Finally, diffing against the 1986 version (also in Paul McJones' archive) will yield messy results. The careful attention to spaces/tabs will minimize the diff files. But there are still around 4 stages of revisions all mixed into the diff that would have to be factored out.
+*    The comment style changes and changes in the error function calls
+*    The change in the frequency of use of the new syntax for type-casting versus old syntax.
+*    The additions made to the code to better handle constructors.
+*    The nuking or complete rewriting of small sections of code in the 1985 version.
+A (hand-written) letter attached with the README is as follows:
+
+Otherwise: changes relative to the 1986 have been minimized while also double-checking for and correcting:
+*	the placement of tabs and spaces, including those at the ends of lines
+*	restoring areas clipped in the printout [365 of them] -- all commented as //(#) Clipped at ...
+*	distinguishing l from 1; O from 0 -- not clear with the printer used.
+There is one additional comment also marked //(#) in libs/task/obj.c.
+
+Files are referred to in this distribution that were not in the printout transcribed. They'll have to be included from the 1986 version and reconciled. The listing is in the early dialect of C++ itself that the cfront program is processing -- a dialect not supported today. Translated C files are in the "scratch" directory only in the 1986 version. These files would have to be translating using that program or rewritten and/or translated by hand.
+
+================================
+
+Bjorne,
+	Here's a copy of what [you]
+	want and ["work"? -- crossed out] on the tape.
+	Sorry about the delay, but
+	you know how it is when you
+	have source and control and makefile
+	around to mess things up!
+	SCD
+
+795 - laser1	Sat 1985 Feb 09 19:32:27 EST
+ARGS:		[-C -d -fp -oorig=c++ -otime=476843513]
+NAME:		[c++]
+PASSCOMM:	[sfbc!c++:D.Swartout:lpbin=m13:home=bc]
+copies:		[1]
+ctime:		[0]
+files:		[/usr/spool/lp/request/laser/d0-9677]
+job:		[laser-9001]
+lpbin:		[]
+mach:		[sfbc (laser-9001)]
+mail:		[]
+originator:	[c++]
+printer:	[laser1]
+printtime:	[476843537]
+request:	[laser-9677]
+route:		[nsc]
+sequence:	[795]
+subtime:	[476843513]
+title:		[]
+transit:	[0]
+version:	[08-02-84]

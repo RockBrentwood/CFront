@@ -1,0 +1,16 @@
+// 1985 Feb 08 12:50
+/* %Z% %M% %I% %H% %T% */
+
+char	1	1
+short	2	2
+int	2	2	32767
+long	4	4
+double	8	4
+bit	8	32
+ptr	4	4
+struct	1	1
+frame	4	0
+top	0	0
+word	4	0
+wptr	4	4
+bptr	4	4
