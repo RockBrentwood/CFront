@@ -1,4 +1,4 @@
-The class hierarchy:
+The class hierarchy: [Note: the planned renamings haven't yet been done in the public-facing version.]
 Loc
 IdList
 Node	⇐	Table
