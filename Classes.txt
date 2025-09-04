@@ -1,0 +1,27 @@
+The class hierarchy: [Note: the planned renamings haven't yet been done in the public-facing version.]
+Loc
+IdList
+Node	⇐	Table
+	⇐	Type	⇐	{Enum, Class, Base, Fun, Gen, Vec, Ptr}
+	⇐	Ex	⇐	{ObjEx, TEx, Call, QEx, Ref, Id}
+	⇐	St	⇐	{ESt, IfSt, LSt, ForSt, Block, Pair}
+Ids
+Sts
+Exs
+Scope
+InLine
+
+The class/struct names were regularized from the original as follows:
+TOK								⇒ Token
+loc,name_list,node,table,nlist,slist,elist,dcl_context,iline	⇒ Loc,IdList,Node,Table,Ids,Sts,Exs,Scope,InLine
+Ploc,Plist,PP,Pnode,Ptable,Pin					⇒ LocP,IdListP,NodeP,NodeP,TableP,InLineP
+(unamed)							⇒ IdsP,StsP,ExsP,ScopeP,ObjExP,IfStP,LStP,ForStP,PairP
+table,expr,stmt							⇒ Ex,St
+Ptable,Pexpr,Pstmt						⇒ ExP,StP
+type,enumdef,classdef,basetype,fct,gen,vec,ptr			⇒ Type,Enum,Class,Base,Fun,Gen,Vec,Ptr
+Ptype,Penum,Pclass,Pbase,Pfct,Pgen,Pvec,Pptr			⇒ TypeP,EnumP,ClassP,BaseP,FunP,GenP,VecP,PtrP
+expr,type_expr,texpr,call,qexpr,ref,name			⇒ Ex,ObjEx,TEx,Call,QEx,Ref,Id
+Pexpr,Ptexpr,Pcall,Pqexpr,Pref,Pname				⇒ ExP,TExP,CallP,QExP,RefP,IdP
+stmt,estmt,ifstmt,lstmt,forstmt,block,pair			⇒ St,ESt,IfSt,LSt,ForSt,Block,Pair
+Pstmt,Pestmt,Pblock						⇒ StP,EStP,BlockP
+key,Pkey,PFI,PFV,field,Pfield,tstmt,Ptstmt			⇒ (removed because they were never used)
