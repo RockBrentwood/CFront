@@ -15,11 +15,11 @@ LSRC=/usr/lsrc/cmd/CC
 all	:
 		if u3b; then \
 			cd C++ ; make CC=$(CC) OSUF=.o ; \
-			cd .. ;
+			cd .. ; \
 			cd libC ; make CC=$(CC) OSUF=.o ; \
 		else \
 			cd C++ ; make CC=$(CC) OSUF=..o ; \
-			cd .. ;
+			cd .. ; \
 			cd libC ; make CC=$(CC) OSUF=..o ; \
 		fi
 		if u3b ; \

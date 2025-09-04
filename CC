@@ -1,6 +1,6 @@
 ## 1985 Feb 08 17:59
 # @(#) CC 1.2 2/8/85 17:59:07
-E=O
+E=0
 : ${CFRONT:=$ROOT/usr/lbin/cfront}
 : ${SSCAN:=$ROOT/usr/sscan}
 : ${ARLIB:=$ROOT/lib/libC.a}

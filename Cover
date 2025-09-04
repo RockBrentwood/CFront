@@ -1,7 +1,7 @@
 The 1985 C++ installation was organized into the following:
 *	C++ (cfront)
 *	sscan
-*	libc
+*	libC
 	-	complex
 	-	new
 	-	stream
