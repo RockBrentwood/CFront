@@ -6,6 +6,16 @@ The 1985 C++ installation was organized into the following:
 	-	new
 	-	stream
 	-	task
+The following directories, not included in the original, were added:
+*	incl		−	a copy of the include files from Release 1 needed for the files in C++
+*	scratchE	−	a working (but not yet fully debugged) version of Release E in C.
+*	scratch1	−	a working (but not yet fully debugged) version of Release 1 in C.
+The C versions of the programs can only work in the following combination with a C++ source file (named here "Source.c") as:
+	cpp -I. -I../incl Source.c >Source.c~
+	ex Source.c~ <Convert.scr
+	./cfront <Source.c~ >Source..c
+where it is assumed that a copy of or link to cfront is contained in the C++ source directory.
+This still needs to be debugged and fixed.
 
 The original cover letter is included below. The PDFs the printouts were derived from are not included with this distribution but are (at the time of writing) present in Paul McJones' archive.
 
