@@ -1,19 +1,23 @@
 The 1985 C++ installation was organized into the following:
-*	C++ (cfront)
-*	sscan
-*	libC
-	-	complex
-	-	new
-	-	stream
-	-	task
+*	[C++ (cfront)](C++)
+*	[sscan](sscan)
+*	[libC](libC)
+	-	[complex](libC/complex)
+	-	[new](libC/new)
+	-	[stream](libC/stream)
+	-	[task](libC/task)
+
 The following directories, not included in the original, were added:
-*	incl		−	a copy of the include files from Release 1 needed for the files in C++
-*	scratchE	−	a working (but not yet fully debugged) version of Release E in C.
-*	scratch1	−	a working (but not yet fully debugged) version of Release 1 in C.
+*	[incl](incl)		−	a copy of the include files from Release 1 needed for the files in C++
+*	[scratchE](scratchE)	−	a working (but not yet fully debugged) version of Release E in C.
+*	[scratch1](scratch1)	−	a working (but not yet fully debugged) version of Release 1 in C.
+
 The C versions of the programs can only work in the following combination with a C++ source file (named here "Source.c") as:
-	cpp -I. -I../incl Source.c >Source.c~
-	ex Source.c~ <Convert.scr
-	./cfront <Source.c~ >Source..c
+<pre>
+	cpp -I. -I../incl Source.c &gt;Source.c~
+	ex Source.c~ &lt;Convert.scr
+	./cfront &lt;Source.c~ &gt;Source..c
+</pre>
 where it is assumed that a copy of or link to cfront is contained in the C++ source directory.
 This still needs to be debugged and fixed.
 
@@ -24,18 +28,20 @@ Finally, diffing against the 1986 version (also in Paul McJones' archive) will y
 *    The change in the frequency of use of the new syntax for type-casting versus old syntax.
 *    The additions made to the code to better handle constructors.
 *    The nuking or complete rewriting of small sections of code in the 1985 version.
+
 A (hand-written) letter attached with the README is as follows:
 
 Otherwise: changes relative to the 1986 have been minimized while also double-checking for and correcting:
 *	the placement of tabs and spaces, including those at the ends of lines
 *	restoring areas clipped in the printout [365 of them] -- all commented as //(#) Clipped at ...
 *	distinguishing l from 1; O from 0 -- not clear with the printer used.
+
 There is one additional comment also marked //(#) in libs/task/obj.c.
 
 Files are referred to in this distribution that were not in the printout transcribed. They'll have to be included from the 1986 version and reconciled. The listing is in the early dialect of C++ itself that the cfront program is processing -- a dialect not supported today. Translated C files are in the "scratch" directory only in the 1986 version. These files would have to be translating using that program or rewritten and/or translated by hand.
 
-================================
-
+<hr>
+<pre>
 Bjorne,
 	Here's a copy of what [you]
 	want and ["work"? -- crossed out] on the tape.
@@ -66,3 +72,4 @@ subtime:	[476843513]
 title:		[]
 transit:	[0]
 version:	[08-02-84]
+</pre>

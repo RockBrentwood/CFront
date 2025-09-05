@@ -1,3 +1,5 @@
+**Print-out:**
+<pre>
 797 - laser1	Sat 1985 Feb 09 19:35:53 EST
 ARGS:		[-C -d -fp -oorig=c++ -otime=476843632]
 NAME:		[c++]
@@ -19,3 +21,4 @@ subtime:	[476843632]
 title:		[]
 transit:	[1]
 version:	[08-02-84]
+</pre>
